@@ -1,0 +1,82 @@
+<h2>Insert boardgame via BGG id (Recommended):</h2>
+<form [formGroup]="bggForm" (ngSubmit)="onBggSubmit()">
+    <div class="mb-3">
+        <label for="bggId" class="form-label">BGG id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="bggId"
+          formControlName="bggId"
+        />
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!bggForm.valid">
+        Submit
+      </button>
+</form>
+<div class="m-3"><h1>OR</h1></div>
+<h2>Custom Boardgame Form</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="boardgameName" class="form-label">Boardgame Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="boardgameName"
+      formControlName="boardgameName"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="minPlayers" class="form-label">Minimum Players</label>
+    <input
+      type="number"
+      class="form-control"
+      id="minPlayers"
+      formControlName="minPlayers"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="maxPlayers" class="form-label">Maximum Players</label>
+    <input type="number" class="form-control" id="maxPlayers" formControlName="maxPlayers" />
+  </div>
+  <div class="mb-3">
+    <label for="minPlayingTime" class="form-label">Minimum Playing Time</label>
+    <input
+      type="number"
+      class="form-control"
+      id="minPlayingTime"
+      formControlName="minPlayingTime"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="maxPlayingTime" class="form-label">Maximum Playing Time</label>
+    <input
+      type="number"
+      class="form-control"
+      id="maxPlayingTime"
+      formControlName="maxPlayingTime"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="complexityWeight" class="form-label">Complexity Weight</label>
+    <input
+      type="number"
+      class="form-control"
+      id="complexityWeight"
+      formControlName="complexityWeight"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="categories" class="form-label">Categories (use comma for multiple values)</label>
+    <input
+      type="text"
+      class="form-control"
+      id="categories"
+      formControlName="categories"
+    />
+  </div>
+
+
+  <button type="submit" class="btn btn-success" [disabled]="!form.valid">
+    Submit
+  </button>
+</form>

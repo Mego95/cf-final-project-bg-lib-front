@@ -1,0 +1,38 @@
+<div>
+    <a type="button" class="btn btn-large btn-success" routerLink="/boardgames-insert">
+        Add Boardgame
+    </a>
+</div>
+
+<div *ngIf="boardgamesList.length">
+    <table class="table table-striped">
+        <thead>
+            <th scope="col">Name</th>
+            <th scope="col">Minimum players</th>
+            <th scope="col">Maximum players</th>
+            <th scope="col">Minimum Playing Time</th>
+            <th scope="col">Maximum Playing Time</th>
+            <th scope="col">Complexity Weight</th>
+            <th scope="col">Categories</th>
+            <th scope="col">Favorite</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let boardgame of boardgamesList">
+                <td>{{ boardgame.boardgameName }}</td>
+                <td>{{ boardgame.minPlayers }}</td>
+                <td>{{ boardgame.maxPlayers }}</td>
+                <td>{{ boardgame.minPlayingTime }} min</td>
+                <td>{{ boardgame.maxPlayingTime }} min</td>
+                <td>{{ boardgame.complexityWeight }}</td>
+                <td>{{ boardgame.categories }}</td>
+                <td><span *ngIf="boardgame.favorite">YES</span></td>
+                <td><a type="button" class="btn btn-info" (click)="toggleFavorite(boardgame.id)">
+                    Favorite?
+                </a></td>
+                <td><a type="button" class="btn btn-danger" (click)="onDelete(boardgame.id)">
+                    Delete
+                </a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
