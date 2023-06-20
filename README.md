@@ -1,6 +1,5 @@
-# BgLibFront
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+# Coding Factory Final Project
+### This is the front-end client for the final project of coding factory.
 
 ## Development server
 
